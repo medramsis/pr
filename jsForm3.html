@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylejs.css">
+
+    <title>page3</title>
+</head>
+<body onload="afficher()">
+    <form action="jsFormFinal.html"   id="survey-form">
+
+        <div class="form-group">
+            <p> Avez-vous été pleinement satisfait du service et pensez-vous que vous allez continuer à l'utiliser ? </p>
+            <label for="oui">
+              <input id="oui" type="radio" name="avisservice" checked>
+              oui
+            </label>
+
+            <label for="non">
+              <input id="non" type="radio" name="avisservice" >
+               non
+            </label>
+
+            <label for="hesite">
+              <input id="hesite" type="radio" name="avisservice" >
+             j'hésite
+            </label>
+          </div>
+
+          <div class="form-group">
+            <p> Sur un échelle de 10, à combien recommenderiez-vous Free Up Coaching à un proche ? </p>
+            <label for="inter">
+              <input id="in" type="range"  name="avisreco" list="tickmarks" step="10">
+              <datalist id="tickmarks">
+                <option value="0">
+                <option value="10">
+                <option value="20">
+                <option value="30">
+                <option value="40">
+                <option value="50">
+                <option value="60">
+                <option value="70">
+                <option value="80">
+                <option value="90">
+                <option value="100">
+              </datalist>
+
+          </div>
+
+          <div class="form-group">
+            <p> Auriez-vous des remarques ou suggestions d’amélioration ? </p>
+            <label for="rem">
+              <textarea name="remarque" id="re" cols="30" rows="10" placeholder="exprimez-vous"></textarea>
+            </label>
+          </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="envoyer" id="submit" onclick="download_csv()">
+          </div>
+          
+<script src="script.js"></script>
+    </form>
+     
+</body>
+
+</html>
