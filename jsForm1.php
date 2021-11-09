@@ -13,7 +13,7 @@
 </head>
   <script>
 var myCookies= [];
-    function  saveCookies(name)
+    function saveCookies(name)
     { 
     
         myCookies ["_nom"] = document.getElementById ("nom").value;
@@ -31,6 +31,24 @@ var myCookies= [];
             document.cookie = cookieString ;
         }
     }
+
+    function traiterEmail(){
+                var mail = document.getElementById("email").value;         
+               
+             if(mail.indexOf("@") == -1 || mail.length < 6 || mail.indexOf(".")== -1) {
+            alert ("Entrez un email valide");
+            }else{
+                mail.value.trim();
+            }}  
+    function traiterNumero(){
+    var num = document.getElementById("tel").value;
+    if(num.length != 10 || isNaN(num) )
+        
+
+    {
+        alert ("Entrez un numéro valide");
+    }
+}
     </script>
 <body>
   
@@ -53,12 +71,12 @@ var myCookies= [];
 
             <div class="form-group">
                 <label for="email" id="email-label">email</label>
-                <input type="email" id="email" name="email" placeholder="entrer votre email" required>
+                <input type="email" id="email" name="email" onblur="traiterEmail()" placeholder="entrer votre email" required>
               </div>
 
               <div class="form-group">
                 <label for="tel" id="tel-label">Telephone</label>
-                <input type="tel" id="tel" name="tel" placeholder="numero de Telephone" required>
+                <input type="tel" id="tel" name="tel" onblur="traiterNumero()" placeholder="numero de Telephone" required>
               </div>
 
 
