@@ -16,14 +16,13 @@ var myCookies= [];
     function saveCookies(name)
     { 
     
-        myCookies ["_nom"] = document.getElementById ("nom").value;
-        myCookies ["_prenom"] = document.getElementById ("prenom").value;
+        myCookies ["_nom"] =document.getElementById ("nom").value;
+        myCookies ["_prenom"] =document.getElementById ("prenom").value;
         myCookies ["age"]=document.getElementById("age").value;
         myCookies ["_telephone"] = document.getElementById ("tel").value;
         myCookies ["_email"] = document.getElementById ("email").value;
-       
         myCookies ["note"]  ="0" ;
-        myCookies ["_note"]  ="0" ;
+        myCookies ["_note1"]  ="0" ;
         myCookies ["_note2"]  ="0" ;
         myCookies ["_note3"]  ="0" ;
         myCookies ["_note4"]  ="0" ;
@@ -41,6 +40,22 @@ var myCookies= [];
         }
     }
 
+    function getCookie(name){
+      if(document.cookie.length == 0)
+        return null;
+
+      var regSepCookie = new RegExp('(; )', 'g');
+      var cookies = document.cookie.split(regSepCookie);
+
+      for(var i = 0; i < cookies.length; i++){
+        var regInfo = new RegExp('=', 'g');
+        var infos = cookies[i].split(regInfo);
+        if(infos[0] == name){
+             return unescape (infos[1]);
+        }
+      }
+      return null;
+    }
     function traiterEmail(){
                 var mail = document.getElementById("email").value;         
                
@@ -99,7 +114,9 @@ var myCookies= [];
   
             </form>
 
-     
+<?php
+include('update.php');
+?>
 </body>
 
 

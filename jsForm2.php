@@ -22,8 +22,8 @@
         <div class="form-group">
         <div class="class">
         <fieldset>
-  Bonjour , <span id=span1></span> 
-    <span id=span2></span>
+  Bonjour <p><span id=span1></span>  <span id=span2></span> </p>
+
         </br>
    
     </fieldset>
@@ -104,30 +104,31 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" onclick="getCookie()" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="calcul1(form1),calcul2(form1),calcul3(form1),moy(),getCookie()" > Submit </button>
           </div>
 
 
     </form>
      <script>
-     function getCookie(name){
-      if(document.cookie.length == 0)
-        return null;
-
-      var regSepCookie = new RegExp('(; )', 'g');
-      var cookies = document.cookie.split(regSepCookie);
-
-      for(var i = 0; i < cookies.length; i++){
-        var regInfo = new RegExp('=', 'g');
-        var infos = cookies[i].split(regInfo);
-        if(infos[0] == name){
-             return unescape (infos[1]);
-        }
-      }
+   function getCookie(name){
+    if(document.cookie.length == 0)
       return null;
+
+    var regSepCookie = new RegExp('(; )', 'g');
+    var cookies = document.cookie.split(regSepCookie);
+
+    for(var i = 0; i < cookies.length; i++){
+      var regInfo = new RegExp('=', 'g');
+      var infos = cookies[i].split(regInfo);
+      if(infos[0] == name){
+           return unescape (infos[1]);
+      }
     }
-  /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
-  var prenom = document.getElementById('span1').innerHTML = getCookie("_prenom");    
+    return null;
+  }
+/*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
+var prenom = document.getElementById('span1').innerHTML = getCookie('_prenom');
+var nom = document.getElementById('span2').innerHTML = getCookie('_nom');
 
   function calcul1(form1){
     if (form1.sportpratic[0].checked)
@@ -171,30 +172,30 @@
     }
   }
 
-  function calcul2(form1){
+  function calcul3(form1){
     if (form1.app[0].checked)
     {
-    document.cookie= "_note2=" + parseInt(0);
+    document.cookie= "_note3=" + parseInt(0);
     }
     else if (form1.app[1].checked)
     {
-    document.cookie= "_note2=" +parseFloat(1);
+    document.cookie= "_note3=" +parseFloat(1);
     }
     else if (form1.app[2].checked)
     {
-    document.cookie= "_note2=" +parseFloat(2);
+    document.cookie= "_note3=" +parseFloat(2);
     }
     else if (form1.app[3].checked)
     {
-    document.cookie= "_note2=" +parseFloat(3);
+    document.cookie= "_note3=" +parseFloat(3);
     }
     else if (form1.app[4].checked)
     {
-    document.cookie= "_note2=" +parseFloat(4);
+    document.cookie= "_note3=" +parseFloat(4);
     }
     else 
     {
-    document.cookie= "_note2=" +parseFloat(5);
+    document.cookie= "_note3=" +parseFloat(5);
     }
   }
 

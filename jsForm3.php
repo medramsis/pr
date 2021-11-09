@@ -45,26 +45,26 @@
             <p> Sur un échelle de 5, à combien recommenderiez-vous Free Up Coaching à un proche ? </p>
             <label for="inter">
             
-                <input id="int" type="radio" name="environnement" value="1" checked>
+                <input id="int" type="radio" name="env" value="1" checked>
                 1 
               </label>
   
               <label for="ext">
-                <input id="inv" type="radio" name="environnement" value="2">
+                <input id="inv" type="radio" name="env" value="2">
                 2
               </label>
   
               <label for="noPref">
-                <input id="inv" type="radio" name="environnement" value="3">
+                <input id="inv" type="radio" name="env" value="3">
               3
                 </label>
   
                 <label for="ext">
-                  <input id="inv" type="radio" name="environnement" value="4">
+                  <input id="inv" type="radio" name="env" value="4">
                   4
                 </label>
                 <label for="ext">
-                  <input id="inv" type="radio" name="environnement" value="5">
+                  <input id="inv" type="radio" name="env" value="5">
                   5 
                 </label>
   
@@ -80,7 +80,7 @@
 
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="calcul4(form1),calcul5(form1),moy(),getCookie(),moyenne()" > Submit </button>
           </div>
           
 <script >
@@ -105,6 +105,76 @@ function getCookie(name){
     }
   /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
   var prenom = document.getElementById('span1').innerHTML = getCookie("_nom");
+
+  function calcul4(form1){
+    if (form1.avisservice[0].checked)
+    {
+    document.cookie= "_note4=" + parseInt(5);
+    }
+    else if (form1.avisservice[1].checked)
+    {
+    document.cookie= "_note4=" +parseFloat(0);
+    }
+    else 
+    {
+    document.cookie= "_note4=" +parseFloat(2);
+    }
+  }
+
+  function calcul5(form1){
+    if (form1.env[0].checked)
+    {
+    document.cookie= "_note5=" + parseInt(0);
+    }
+    else if (form1.env[1].checked)
+    {
+    document.cookie= "_note5=" +parseFloat(1);
+    }
+    else if (form1.env[2].checked)
+    {
+    document.cookie= "_note5=" +parseFloat(2);
+    }
+    else if (form1.env[3].checked)
+    {
+    document.cookie= "_note5=" +parseFloat(3);
+    }
+    else if (form1.env[4].checked)
+    {
+    document.cookie= "_note5=" +parseFloat(4);
+    }
+    else 
+    {
+    document.cookie= "_note5=" +parseFloat(5);
+    }
+  }
+
+  function moy(){
+  var note = parseInt (getCookie('_note5'));
+  var note = note + parseInt (getCookie('_note6'));
+  var note = note + parseInt (getCookie('note'));
+  document.cookie ="note=" +note;
+  }
+
+
+  
+function moyenne(){
+var note = parseInt (getCookie('note'));
+var note = (note / 3);
+var note = Math.round(note);
+
+document.cookie= "moyenne="+ note;
+}
+
+
+ function retour(){
+ var note3 = getCookie('_note');
+ var note4 = getCookie('_note2');
+ var note = getCookie('note');
+ 
+note = parseInt(note3) + parseInt(note4);
+document.cookie ="note=" +note;
+ }
+
 </script>
     </form>
      
