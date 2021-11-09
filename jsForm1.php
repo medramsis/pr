@@ -17,7 +17,7 @@ var myCookies= [];
     { 
     
         myCookies ["_nom"] = document.getElementById ("nom").value;
-        myCookies ["_prenom"] = document.getElementById ("Prenom").value;
+        myCookies ["_prenom"] = document.getElementById ("prenom").value;
         myCookies ["age"]=document.getElementById("age").value;
         myCookies ["_telephone"] = document.getElementById ("tel").value;
         myCookies ["_email"] = document.getElementById ("email").value;

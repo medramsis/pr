@@ -104,7 +104,7 @@ function getCookie(name){
       return null;
     }
   /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
-  var prenom = document.getElementById('span1').innerHTML = getCookie('_prenom');
+  var prenom = document.getElementById('span1').innerHTML = getCookie("_nom");
 </script>
     </form>
      
