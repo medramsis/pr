@@ -22,6 +22,14 @@ var myCookies= [];
         myCookies ["_telephone"] = document.getElementById ("tel").value;
         myCookies ["_email"] = document.getElementById ("email").value;
        
+        myCookies ["note"]  ="0" ;
+        myCookies ["_note"]  ="0" ;
+        myCookies ["_note2"]  ="0" ;
+        myCookies ["_note3"]  ="0" ;
+        myCookies ["_note4"]  ="0" ;
+        myCookies ["_note5"]  ="0" ;
+        myCookies ["_note6"]  ="0" ;
+        myCookies["moyenne"]="0";
         document.cookie  =  "" ;
 
         var  expiresAtt  =  new  Date( Date.now() + 60 * 1000 ).toString();

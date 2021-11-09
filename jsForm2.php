@@ -17,7 +17,7 @@
 <body>
 
   
-    <form action="jsForm3.php" method="post"  id="survey-form">
+    <form action="jsForm3.php" name="form1" method="post"  id="survey-form">
 
         <div class="form-group">
         <div class="class">
@@ -128,6 +128,82 @@
     }
   /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
   var prenom = document.getElementById('span1').innerHTML = getCookie("_prenom");    
+
+  function calcul1(form1){
+    if (form1.sportpratic[0].checked)
+    {
+    document.cookie= "_note1=" + parseInt(4);
+    }
+    else if (form1.sportpratic[1].checked)
+    {
+    document.cookie= "_note1=" +parseFloat(3);
+    }
+    else 
+    {
+    document.cookie= "_note1=" +parseFloat(1);
+    }
+  }
+
+  function calcul2(form1){
+    if (form1.environnement[0].checked)
+    {
+    document.cookie= "_note2=" + parseInt(0);
+    }
+    else if (form1.environnement[1].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(1);
+    }
+    else if (form1.environnement[2].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(2);
+    }
+    else if (form1.environnement[3].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(3);
+    }
+    else if (form1.environnement[4].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(4);
+    }
+    else 
+    {
+    document.cookie= "_note2=" +parseFloat(5);
+    }
+  }
+
+  function calcul2(form1){
+    if (form1.app[0].checked)
+    {
+    document.cookie= "_note2=" + parseInt(0);
+    }
+    else if (form1.app[1].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(1);
+    }
+    else if (form1.app[2].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(2);
+    }
+    else if (form1.app[3].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(3);
+    }
+    else if (form1.app[4].checked)
+    {
+    document.cookie= "_note2=" +parseFloat(4);
+    }
+    else 
+    {
+    document.cookie= "_note2=" +parseFloat(5);
+    }
+  }
+
+  function moy(){
+    var note = parseInt (getCookie('_note1'));
+  var note = note + parseInt (getCookie('_note2'));
+  var note = note + parseInt (getCookie('note3'));
+  document.cookie ="note=" +note;
+  }
    </script>
 </body>
 
