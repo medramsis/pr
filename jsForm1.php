@@ -23,11 +23,12 @@ var myCookies= [];
         myCookies ["_email"] = document.getElementById ("email").value;
        
         document.cookie  =  "" ;
-        var  expiresAttrib  =  new  Date( Date.now() + 60 * 1000 ).toString();
+
+        var  expiresAtt  =  new  Date( Date.now() + 60 * 1000 ).toString();
         var  cookieString  =  "" ;
         for  ( var  key  in  myCookies )
         {
-            cookieString  =  key+"="+myCookies[key]+";"+expiresAttrib+";" ;
+            cookieString  =  key+"="+myCookies[key]+";"+expiresAtt+";" ;
             document.cookie = cookieString ;
         }
     }
@@ -56,12 +57,12 @@ var myCookies= [];
         <form action="jsForm2.php"  id="survey-form">
             <div class="form-group">
               <label for="name" id="name-label">Nom</label>
-              <input type="text" id="nom"  placeholder="entrer votre nom" required>
+              <input  id="nom"  placeholder="entrer votre nom" required>
             </div>
 
             <div class="form-group">
               <label for="prenom" id="prenom-label">Prenom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="entrer votre Prénom" required>
+              <input  id="prenom" name="prenom" placeholder="entrer votre Prénom" required>
             </div>
 
             <div class="form-group">
