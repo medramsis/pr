@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylejs.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
 
 
     <title>page3</title>
@@ -32,35 +35,45 @@
           </div>
 
           <div class="form-group">
-            <p> Sur un échelle de 10, à combien recommenderiez-vous Free Up Coaching à un proche ? </p>
+            <p> Sur un échelle de 5, à combien recommenderiez-vous Free Up Coaching à un proche ? </p>
             <label for="inter">
-              <input id="in" type="range"  name="avisreco" list="tickmarks" step="10">
-              <datalist id="tickmarks">
-                <option value="0">
-                <option value="10">
-                <option value="20">
-                <option value="30">
-                <option value="40">
-                <option value="50">
-                <option value="60">
-                <option value="70">
-                <option value="80">
-                <option value="90">
-                <option value="100">
-              </datalist>
+            
+                <input id="int" type="radio" name="environnement" value="1" checked>
+                1 
+              </label>
+  
+              <label for="ext">
+                <input id="inv" type="radio" name="environnement" value="2">
+                2
+              </label>
+  
+              <label for="noPref">
+                <input id="inv" type="radio" name="environnement" value="3">
+              3
+                </label>
+  
+                <label for="ext">
+                  <input id="inv" type="radio" name="environnement" value="4">
+                  4
+                </label>
+                <label for="ext">
+                  <input id="inv" type="radio" name="environnement" value="5">
+                  5 
+                </label>
+  
 
           </div>
 
           <div class="form-group">
             <p> Auriez-vous des remarques ou suggestions d’amélioration ? </p>
             <label for="rem">
-              <textarea name="remarque" id="re" cols="30" rows="10" placeholder="exprimez-vous"></textarea>
+              <textarea name="remarque" id="rez" cols="30" rows="10" placeholder="exprimez-vous"></textarea>
             </label>
           </div>
 
 
           <div class="form-group">
-            <input type="submit" value="envoyer" id="submit"  onclick="download_csv()">
+            <button type="submit" class="btn btn-outline-warning" > Submit </button>
           </div>
           
 <script src="script.js"></script>

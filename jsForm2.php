@@ -14,12 +14,16 @@
 
     <title>page2</title>
 </head>
-<body >
+<body>
 
-  <h4 id="bnj"></h4>
-    <form action="jsForm3.html"   id="survey-form">
+  
+    <form action="jsForm3.php"   id="survey-form">
 
         <div class="form-group">
+          <fieldset>
+          Bonjour , <span id=span1></span> 
+          <span id=span2></span>
+          </fieldset>
             <p> Combien de fois par semaine pratiquez-vous du sport en moyenne ? </p>
             <label for="4-6">
               <input id="4-6" type="radio" name="sportpratic" value="max" checked>
@@ -95,12 +99,32 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="getCookie()" > Submit </button>
           </div>
 
 
     </form>
-     <script src="script.js"></script>
+     <script>
+       function getCookie(name){
+      if(document.cookie.length == 0)
+        return null;
+
+      var regSepCookie = new RegExp('(; )', 'g');
+      var cookies = document.cookie.split(regSepCookie);
+
+      for(var i = 0; i < cookies.length; i++){
+        var regInfo = new RegExp('=', 'g');
+        var infos = cookies[i].split(regInfo);
+        if(infos[0] == name){
+             return unescape (infos[1]);
+        }
+      }
+      return null;
+    }
+  /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
+  var prenom = document.getElementById('span1').innerHTML = getCookie('_prenom');
+  var nom = document.getElementById('span2').innerHTML = getCookie('_nom');
+     </script>
 </body>
 
 </html>

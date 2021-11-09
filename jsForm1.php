@@ -11,9 +11,31 @@
     
     <title>Document</title>
 </head>
+  <script>
+var myCookies= [];
+    function  saveCookies(name)
+    { 
+    
+        myCookies ["_nom"] = document.getElementById ("nom").value;
+        myCookies ["_prenom"] = document.getElementById ("Prenom").value;
+        myCookies ["age"]=document.getElementById("age").value;
+        myCookies ["_telephone"] = document.getElementById ("tel").value;
+        myCookies ["_email"] = document.getElementById ("email").value;
+       
+        document.cookie  =  "" ;
+        var  expiresAttrib  =  new  Date( Date.now() + 60 * 1000 ).toString();
+        var  cookieString  =  "" ;
+        for  ( var  key  in  myCookies )
+        {
+            cookieString  =  key+"="+myCookies[key]+";"+expiresAttrib+";" ;
+            document.cookie = cookieString ;
+        }
+    }
+    </script>
 <body>
+  
 
-        <form action="jsForm2.html"  id="survey-form">
+        <form action="jsForm2.php"  id="survey-form">
             <div class="form-group">
               <label for="name" id="name-label">Nom</label>
               <input type="text" id="nom"  placeholder="entrer votre nom" required>
@@ -44,13 +66,13 @@
 
 
               <div class="form-group">
-                <button type="submit" class="btn btn-outline-warning" > Submit </button>
+                <button type="submit" class="btn btn-outline-warning" onclick="saveCookies()" > Submit </button>
               </div>
 
   
             </form>
 
-        <script src="script.js"></script>
+     
 </body>
 
 
