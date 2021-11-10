@@ -80,7 +80,7 @@
 
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" onclick="calcul4(form2),calcul5(form2),moy(),getCookie(),moyenne()" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="calcul4(form2),calcul5(form2),moy(),getCookie(),moyenne()" > Valider </button>
           </div>
           
 <script >
