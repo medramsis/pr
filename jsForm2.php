@@ -49,7 +49,7 @@
           <div class="form-group">
             <p> Seriez-vous intéressé(e) par un site Internet e-commerce vous permettant de commander en ligne et par l’intermédiaire de votre club de sport votre matériel sportif ? </p>
             <label for="int">
-              <input id="int" type="radio" name="environnement" value="1" checked>
+              <input id="inv" type="radio" name="environnement" value="1" checked>
               1 (Pas du tout intéressant)
             </label>
 
@@ -78,7 +78,7 @@
             <p> Si votre club de sport vous proposait de télécharger une application mobile qui vous permettrait d’être mieux informé (actualité, résultats, horaires, évènements…) et faciliter vos démarches d’inscription, trouveriez-vous cela intéressant ?
             </p>
             <label for="int">
-              <input id="int" type="radio" name="app" value="1" checked>
+              <input id="inv" type="radio" name="app" value="1" checked>
               1 (Pas du tout intéressant)
             </label>
 
@@ -200,9 +200,9 @@ var nom = document.getElementById('span2').innerHTML = getCookie('_nom');
   }
 
   function moy(){
-    var note = parseInt (getCookie('_note1'));
-  var note = note + parseInt (getCookie('_note2'));
-  var note = note + parseInt (getCookie('note3'));
+    var note = parseInt(getCookie('_note1'));
+  var note = note + parseInt(getCookie('_note2'));
+  var note = note + parseInt(getCookie('_note3'));
   document.cookie ="note=" +note;
   }
    </script>

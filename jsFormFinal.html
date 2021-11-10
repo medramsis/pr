@@ -30,7 +30,7 @@ function makeChart2(Participants) {
   // }
   var ParticipantLabels = Participants.map(function(d) {return d._nom});
   var moyenneData = Participants.map(function(d) {return +d.moyenne});
-  var ParticipantColors = Participants.map(function(d) {return d.genre === 'Female' ? '#F15F36' : '#19A0AA';});
+  
 
   var chart = new Chart('myChart2', {
     type: 'line',
@@ -90,7 +90,6 @@ function makeChart(Participants) {
 
   var ParticipantLabels = Participants.map(function(d) {return d._nom});
   var agesData = Participants.map(function(d) {return +d.age});
-  var ParticipantColors = Participants.map(function(d) {return d.genre === 'Female' ? '#F15F36' : '#19A0AA';});
 
   var chart = new Chart('chart', {
     type: 'horizontalBar',

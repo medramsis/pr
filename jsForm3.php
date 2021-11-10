@@ -149,9 +149,9 @@ function getCookie(name){
   }
 
   function moy(){
-  var note = parseInt (getCookie('_note5'));
-  var note = note + parseInt (getCookie('_note6'));
-  var note = note + parseInt (getCookie('note'));
+  var note = parseInt(getCookie('_note5'));
+  var note = note + parseInt(getCookie('_note6'));
+  var note = note + parseInt(getCookie('note'));
   document.cookie ="note=" +note;
   }
 
