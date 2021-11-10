@@ -104,7 +104,7 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" onclick="calcul1(form1),calcul2(form1),calcul3(form1),moy(),getCookie()" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="calcul1(form1),calcul2(form1),calcul3(form1),moy(),getCookie()" > Valider </button>
           </div>
 
 
