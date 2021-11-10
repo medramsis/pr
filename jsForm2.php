@@ -127,8 +127,8 @@
     return null;
   }
 /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
-var prenom = document.getElementById('span1').innerHTML = getCookie('_prenom');
-var nom = document.getElementById('span2').innerHTML = getCookie('_nom');
+var prenom = document.getElementById('span1').innerHTML = getCookie("_nom");
+
 
   function calcul1(form1){
     if (form1.sportpratic[0].checked)

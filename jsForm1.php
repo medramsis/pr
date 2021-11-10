@@ -57,7 +57,11 @@ var myCookies= [];
     }
 }
     </script>
-<body>
+<body style="background-image:url('//background.jpeg'),linear-gradient(
+      115deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(2, 7, 36, 0.7)
+    );">
   
 
         <form action="jsForm2.php"  id="survey-form">
@@ -73,7 +77,7 @@ var myCookies= [];
 
             <div class="form-group">
               <label for="number" id="number-label">Age <span>(optional)</span></label>
-              <input type="number" id="number" name="age" min="18" max="100" placeholder="Age">
+              <input type="number" id="age" name="age" min="18" max="100" placeholder="Age">
             </div>
 
             <div class="form-group">
