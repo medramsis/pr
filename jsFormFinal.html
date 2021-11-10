@@ -12,12 +12,7 @@
 <script>
 
 function makeChart2(Participants) {
-// Participants is an array of objects where each object is something like:
-// {
-//   "Name": "Steffi Graf",
-//   "ages": "377",
-//   "Gender": "Female"
-// }
+
 var ParticipantLabels = Participants.map(function(d) {return d.nom});
 var moyenneData = Participants.map(function(d) {return +d.moyenne});
 
@@ -37,7 +32,7 @@ scales: {
           scaleLabel: {
         display: true,
         labelString: 'La moyenne Par Personne' ,
-        fontSize: 40
+        fontSize: 20
       }
     }
   ]
