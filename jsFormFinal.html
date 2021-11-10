@@ -1,132 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
-  <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="style2.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>  
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
 
-<div id="title" style="font-weight: bold; font-size: 50px;">Tableau de bords</div>
+	<div>
 
+		<p style="text-align: center; font-size: 100%; margin-top: 20px; "><span id=span1></span>  <span id=span2></span> </p>
+		<p style="text-align: center; font-size: 100%; ">Votre moyenne est <span id=span3></span> /10</p>
+		
 
+	</div>
+	<script>
+		function getCookie(name){
+    if(document.cookie.length == 0)
+      return null;
 
-     
-<br>
-      <div class="chart_container2" id="chart2">
-          <canvas id="myChart2"></canvas>
-      </div>
-<script>
-  
-function makeChart2(Participants) {
-  // Participants is an array of objects where each object is something like:
-  // {
-  //   "Name": "Steffi Graf",
-  //   "ages": "377",
-  //   "Gender": "Female"
-  // }
-  var ParticipantLabels = Participants.map(function(d) {return d._nom});
-  var moyenneData = Participants.map(function(d) {return +d.moyenne});
-  
+    var regSepCookie = new RegExp('(; )', 'g');
+    var cookies = document.cookie.split(regSepCookie);
 
-  var chart = new Chart('myChart2', {
-    type: 'line',
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: true
-      },
-      scales: {
-        xAxes: [
-          {
-               
-            
-        
-                scaleLabel: {
-              display: true,
-              labelString: 'La moyenne Par Personne et par genre' ,
-              fontSize: 40
-            }
-          }
-        ]
+    for(var i = 0; i < cookies.length; i++){
+      var regInfo = new RegExp('=', 'g');
+      var infos = cookies[i].split(regInfo);
+      if(infos[0] == name){
+           return unescape (infos[1]);
       }
-    },
-    data: {
-      labels: ParticipantLabels,
-      datasets: [
-        {
-          data: moyenneData,
-          backgroundColor: ParticipantColors
-        }
-      ]
     }
-  })
-}
-
-// Request data using D3
-d3.csv("http://localhost/formulaire_js/formulaireJs/atp_wta.csv")
-  .then(makeChart2);
-</script>
+    return null;
+  }
+/*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
+var moyenne = document.getElementById('span3').innerHTML = getCookie('moyenne');
 
 
-<div id="legend">
-  <div class="item female">Women</div>
-  <div class="item male">Men</div>
-</div>
-<div class="allGraph">
-<div id="chart-wrapper">
-  <canvas id="chart" style="width: 400px;height: 200px;"></canvas>
-</div>
-
-<script type="text/javascript">
-  Chart.defaults.global.defaultFontFamily = 'Roboto';
-Chart.defaults.global.defaultFontColor = '#333';
-
-function makeChart(Participants) {
-
-
-  var ParticipantLabels = Participants.map(function(d) {return d._nom});
-  var agesData = Participants.map(function(d) {return +d.age});
-
-  var chart = new Chart('chart', {
-    type: 'horizontalBar',
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: true
-      },
-      scales: {
-        xAxes: [
-          {
-            scaleLabel: {
-              display: true,
-              labelString: 'Age et genrs des participants' ,
-              fontSize: 40
-            }
-          }
-        ]
-      }
-    },
-    data: {
-      labels: ParticipantLabels,
-      datasets: [
-        {
-          data: agesData,
-          backgroundColor: ParticipantColors
-        }
-      ]
-    }
-  })
-}
-
-// Request data using D3
-d3.csv("http://localhost/projet/file1.csv")
-  .then(makeChart);
-</script>
-
-
+	</script>
 </body>
 </html>
