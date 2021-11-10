@@ -16,8 +16,8 @@ var myCookies= [];
     function saveCookies(name)
     { 
     
-        myCookies ["_nom"] =document.getElementById ("nom").value;
-        myCookies ["_prenom"] =document.getElementById ("prenom").value;
+        myCookies ["_nom"] =(document.getElementById ("nom").value).toString();
+        myCookies ["_prenom"] =(document.getElementById ("prenom").value).toString();
         myCookies ["age"]=document.getElementById("age").value;
         myCookies ["_telephone"] = document.getElementById ("tel").value;
         myCookies ["_email"] = document.getElementById ("email").value;
@@ -95,7 +95,7 @@ var myCookies= [];
 
             <div class="form-group">
                 <label for="email" id="email-label">email</label>
-                <input type="email" id="email" name="email" onblur="traiterEmail()" placeholder="entrer votre email" required>
+                <input type="email" id="email" name="email" onblur="traiterEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="entrer votre email" required>
               </div>
 
               <div class="form-group">

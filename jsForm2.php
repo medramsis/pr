@@ -141,61 +141,61 @@ var nom = document.getElementById('span2').innerHTML = getCookie('_nom');
     }
     else 
     {
-    document.cookie= "_note1=" +parseFloat(1);
+    document.cookie= "_note1=" +parseFloat(0);
     }
   }
 
   function calcul2(form1){
     if (form1.environnement[0].checked)
     {
-    document.cookie= "_note2=" + parseInt(0);
+    document.cookie= "_note2=" + parseInt(1);
     }
     else if (form1.environnement[1].checked)
     {
-    document.cookie= "_note2=" +parseFloat(1);
+    document.cookie= "_note2=" +parseFloat(2);
     }
     else if (form1.environnement[2].checked)
     {
-    document.cookie= "_note2=" +parseFloat(2);
+    document.cookie= "_note2=" +parseFloat(3);
     }
     else if (form1.environnement[3].checked)
     {
-    document.cookie= "_note2=" +parseFloat(3);
+    document.cookie= "_note2=" +parseFloat(4);
     }
     else if (form1.environnement[4].checked)
     {
-    document.cookie= "_note2=" +parseFloat(4);
+    document.cookie= "_note2=" +parseFloat(5);
     }
     else 
     {
-    document.cookie= "_note2=" +parseFloat(5);
+    document.cookie= "_note2=" +parseFloat(0);
     }
   }
 
   function calcul3(form1){
     if (form1.app[0].checked)
     {
-    document.cookie= "_note3=" + parseInt(0);
+    document.cookie= "_note3=" + parseInt(1);
     }
     else if (form1.app[1].checked)
     {
-    document.cookie= "_note3=" +parseFloat(1);
+    document.cookie= "_note3=" +parseFloat(2);
     }
     else if (form1.app[2].checked)
     {
-    document.cookie= "_note3=" +parseFloat(2);
+    document.cookie= "_note3=" +parseFloat(3);
     }
     else if (form1.app[3].checked)
     {
-    document.cookie= "_note3=" +parseFloat(3);
+    document.cookie= "_note3=" +parseFloat(4);
     }
     else if (form1.app[4].checked)
     {
-    document.cookie= "_note3=" +parseFloat(4);
+    document.cookie= "_note3=" +parseFloat(5);
     }
     else 
     {
-    document.cookie= "_note3=" +parseFloat(5);
+    document.cookie= "_note3=" +parseFloat(0);
     }
   }
 

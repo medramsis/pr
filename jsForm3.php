@@ -14,7 +14,7 @@
     <title>page3</title>
 </head>
 <body >
-    <form action="jsFormFinal.html"   id="survey-form">
+    <form action="jsFormFinal.html" name="form2"  id="survey-form">
 
     <div class="class">
         <fieldset>
@@ -80,7 +80,7 @@
 
 
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-warning" onclick="calcul4(form1),calcul5(form1),moy(),getCookie(),moyenne()" > Submit </button>
+            <button type="submit" class="btn btn-outline-warning" onclick="calcul4(form2),calcul5(form2),moy(),getCookie(),moyenne()" > Submit </button>
           </div>
           
 <script >
@@ -106,12 +106,12 @@ function getCookie(name){
   /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
   var prenom = document.getElementById('span1').innerHTML = getCookie("_nom");
 
-  function calcul4(form1){
-    if (form1.avisservice[0].checked)
+  function calcul4(form2){
+    if (form2.avisservice[0].checked)
     {
     document.cookie= "_note4=" + parseInt(5);
     }
-    else if (form1.avisservice[1].checked)
+    else if (form2.avisservice[1].checked)
     {
     document.cookie= "_note4=" +parseFloat(0);
     }
@@ -121,37 +121,38 @@ function getCookie(name){
     }
   }
 
-  function calcul5(form1){
-    if (form1.env[0].checked)
+  function calcul5(form2){
+    if (form2.env[0].checked)
     {
-    document.cookie= "_note5=" + parseInt(0);
+    document.cookie= "_note5=" + parseInt(1);
     }
-    else if (form1.env[1].checked)
-    {
-    document.cookie= "_note5=" +parseFloat(1);
-    }
-    else if (form1.env[2].checked)
+    else if (form2.env[1].checked)
     {
     document.cookie= "_note5=" +parseFloat(2);
     }
-    else if (form1.env[3].checked)
+    else if (form2.env[2].checked)
     {
     document.cookie= "_note5=" +parseFloat(3);
     }
-    else if (form1.env[4].checked)
+    else if (form2.env[3].checked)
     {
     document.cookie= "_note5=" +parseFloat(4);
     }
-    else 
+    else if (form2.env[4].checked)
     {
     document.cookie= "_note5=" +parseFloat(5);
     }
+    else 
+    {
+    document.cookie= "_note5=" +parseFloat(0);
+    }
   }
 
-  function moy(){
-  var note = parseInt(getCookie('_note5'));
-  var note = note + parseInt(getCookie('_note6'));
-  var note = note + parseInt(getCookie('note'));
+  
+function moy(){
+var note = parseInt (getCookie('_note5'));
+  var note = note + parseInt (getCookie('_note4'));
+  var note = note + parseInt (getCookie('note'));
   document.cookie ="note=" +note;
   }
 
@@ -167,14 +168,14 @@ document.cookie= "moyenne="+ note;
 
 
  function retour(){
- var note3 = getCookie('_note');
- var note4 = getCookie('_note2');
+ var note3 = getCookie('_note2');
+ var note5 = getCookie('_note1');
+ var note4 = getCookie('_note3');
  var note = getCookie('note');
  
-note = parseInt(note3) + parseInt(note4);
+note = parseInt(note3) + parseInt(note4)+parseInt(note5);
 document.cookie ="note=" +note;
  }
-
 </script>
     </form>
      
