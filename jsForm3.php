@@ -74,7 +74,7 @@
           <div class="form-group">
             <p> Auriez-vous des remarques ou suggestions d’amélioration ? </p>
             <label for="rem">
-              <textarea name="remarque" id="rez" cols="30" rows="10" placeholder="exprimez-vous"></textarea>
+              <textarea name="remarque" style="color:black;" id="rez" cols="30" rows="10" placeholder="exprimez-vous"></textarea>
             </label>
           </div>
 

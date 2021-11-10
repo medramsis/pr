@@ -4,44 +4,64 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>  
 	<title>Document</title>
 </head>
+
 <script>
 
-  function makeChart(players) {
+function makeChart2(Participants) {
+// Participants is an array of objects where each object is something like:
+// {
+//   "Name": "Steffi Graf",
+//   "ages": "377",
+//   "Gender": "Female"
+// }
+var ParticipantLabels = Participants.map(function(d) {return d._nom});
+var moyenneData = Participants.map(function(d) {return +d.moyenne});
 
-
-  var playerLabels = players.map(function(d) {
-    return d.Name;
-  });
-  var weeksData = players.map(function(d) {
-    return +d.Weeks;
-  });
-
-  var chart = new Chart('chart', {
-    type: "horizontalBar",
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
+var chart = new Chart('myChart2', {
+type: 'line',
+options: {
+maintainAspectRatio: false,
+legend: {
+  display: true
+},
+scales: {
+  xAxes: [
+    {
+         
+      
+  
+          scaleLabel: {
+        display: true,
+        labelString: 'La moyenne Par Personne' ,
+        fontSize: 40
       }
-    },
-    data: {
-      labels: playerLabels,
-      datasets: [
-        {
-          data: weeksData
-        }
-      ]
     }
-  });
+  ]
+}
+},
+data: {
+labels: ParticipantLabels,
+datasets: [
+  {
+    data: moyenneData,
+    backgroundColor: ParticipantLabels
+  }
+]
+}
+})
 }
 
-
 // Request data using D3
-d3.csv('/Applications/XAMPP/xamppfiles/htdocs/projet/file1.csv')
-  .then(makeChart);
+d3.csv("http://localhost/PROJET/file1.csv")
+.then(makeChart2);
 </script>
+
+
+
 <body>
 
 	<div>
@@ -52,8 +72,7 @@ d3.csv('/Applications/XAMPP/xamppfiles/htdocs/projet/file1.csv')
 
 	</div>
   <div>
-    <canvas id="chart"></canvas>
-
+    <canvas id="myChart2"></canvas>
   </div>
 	<script>
 		function getCookie(name){

@@ -11,7 +11,47 @@
     
     <title>Document</title>
 </head>
-  <script>
+
+<body>
+  
+
+        <form action="jsForm2.php"  id="survey-form">
+            <div class="form-group">
+              <label for="name" id="name-label">Nom</label>
+              <input  id="nom" name="nom"  placeholder="entrer votre nom" required>
+            </div>
+
+            <div class="form-group">
+              <label for="prenom" id="prenom-label">Prenom</label>
+              <input  id="prenom" name="prenom" placeholder="entrer votre Prénom" required>
+            </div>
+
+            <div class="form-group">
+              <label for="number" id="number-label">Age <span>(optional)</span></label>
+              <input type="number" id="number" name="age" min="18" max="100" placeholder="Age">
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="email-label">email</label>
+                <input type="email" id="email" name="email" onblur="traiterEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="entrer votre email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tel" id="tel-label">Telephone</label>
+                <input type="tel" id="tel" name="tel" onblur="traiterNumero()" placeholder="numero de Telephone" required>
+              </div>
+
+
+
+
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-outline-warning" onclick="saveCookies()" > Submit </button>
+              </div>
+
+  
+            </form>
+            <script>
 var myCookies= [];
     function saveCookies(name)
     { 
@@ -57,46 +97,6 @@ var myCookies= [];
     }
 }
     </script>
-<body>
-  
-
-        <form action="jsForm2.php"  id="survey-form">
-            <div class="form-group">
-              <label for="name" id="name-label">Nom</label>
-              <input  id="nom" name="nom"  placeholder="entrer votre nom" required>
-            </div>
-
-            <div class="form-group">
-              <label for="prenom" id="prenom-label">Prenom</label>
-              <input  id="prenom" name="prenom" placeholder="entrer votre Prénom" required>
-            </div>
-
-            <div class="form-group">
-              <label for="number" id="number-label">Age <span>(optional)</span></label>
-              <input type="number" id="number" name="age" min="18" max="100" placeholder="Age">
-            </div>
-
-            <div class="form-group">
-                <label for="email" id="email-label">email</label>
-                <input type="email" id="email" name="email" onblur="traiterEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="entrer votre email" required>
-              </div>
-
-              <div class="form-group">
-                <label for="tel" id="tel-label">Telephone</label>
-                <input type="tel" id="tel" name="tel" onblur="traiterNumero()" placeholder="numero de Telephone" required>
-              </div>
-
-
-
-
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-outline-warning" onclick="saveCookies()" > Submit </button>
-              </div>
-
-  
-            </form>
-
 <?php
 include('update.php');
 ?>
