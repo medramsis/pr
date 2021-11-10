@@ -15,9 +15,8 @@
 var myCookies= [];
     function saveCookies(name)
     { 
-    
-        myCookies ["_nom"] =(document.getElementById ("nom").value).toString();
-        myCookies ["_prenom"] =(document.getElementById ("prenom").value).toString();
+        myCookies ["_nom"] =document.getElementById("nom").value;
+        myCookies ["_prenom"] =document.getElementById("prenom").value;
         myCookies ["age"]=document.getElementById("age").value;
         myCookies ["_telephone"] = document.getElementById ("tel").value;
         myCookies ["_email"] = document.getElementById ("email").value;
@@ -30,7 +29,6 @@ var myCookies= [];
         myCookies ["_note6"]  ="0" ;
         myCookies["moyenne"]="0";
         document.cookie  =  "" ;
-
         var  expiresAtt  =  new  Date( Date.now() + 60 * 1000 ).toString();
         var  cookieString  =  "" ;
         for  ( var  key  in  myCookies )
@@ -40,22 +38,7 @@ var myCookies= [];
         }
     }
 
-    function getCookie(name){
-      if(document.cookie.length == 0)
-        return null;
-
-      var regSepCookie = new RegExp('(; )', 'g');
-      var cookies = document.cookie.split(regSepCookie);
-
-      for(var i = 0; i < cookies.length; i++){
-        var regInfo = new RegExp('=', 'g');
-        var infos = cookies[i].split(regInfo);
-        if(infos[0] == name){
-             return unescape (infos[1]);
-        }
-      }
-      return null;
-    }
+ 
     function traiterEmail(){
                 var mail = document.getElementById("email").value;         
                
@@ -80,7 +63,7 @@ var myCookies= [];
         <form action="jsForm2.php"  id="survey-form">
             <div class="form-group">
               <label for="name" id="name-label">Nom</label>
-              <input  id="nom"  placeholder="entrer votre nom" required>
+              <input  id="nom" name="nom"  placeholder="entrer votre nom" required>
             </div>
 
             <div class="form-group">

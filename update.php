@@ -1,8 +1,13 @@
 <?php
+$list = array
+($_COOKIE['_nom'],$_COOKIE['age'],$_COOKIE['moyenne']);
 
-public SplFileObject::__construct(string $file,string $mode = "a",bool $useIncludePath = false,?resource $context = null)}
+$file = fopen('file1.csv','a');  // 'a' for append to file - created if doesn't exit
 
-$file = new SplFileObject("file1.csv", "a"); 
-$file->fputcsv(array($_COOKIE['_nom'],$_COOKIE['age'],$_COOKIE['moyenne'])); 
-$file = null; 
+foreach ($list as $line)
+  {
+  fputcsv($file,explode(',',$line));
+  }
+
+fclose($file); 
 ?>

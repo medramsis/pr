@@ -6,6 +6,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
+<script>
+
+  function makeChart(players) {
+
+
+  var playerLabels = players.map(function(d) {
+    return d.Name;
+  });
+  var weeksData = players.map(function(d) {
+    return +d.Weeks;
+  });
+
+  var chart = new Chart('chart', {
+    type: "horizontalBar",
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      }
+    },
+    data: {
+      labels: playerLabels,
+      datasets: [
+        {
+          data: weeksData
+        }
+      ]
+    }
+  });
+}
+
+
+// Request data using D3
+d3.csv('/Applications/XAMPP/xamppfiles/htdocs/projet/file1.csv')
+  .then(makeChart);
+</script>
 <body>
 
 	<div>
@@ -15,6 +51,10 @@
 		
 
 	</div>
+  <div>
+    <canvas id="chart"></canvas>
+
+  </div>
 	<script>
 		function getCookie(name){
     if(document.cookie.length == 0)
@@ -34,6 +74,8 @@
   }
 /*on insere les valeur de cookies dans les input dont les ID sont 'session-nom' et 'session-prenom'*/
 var moyenne = document.getElementById('span3').innerHTML = getCookie('moyenne');
+
+
 
 
 	</script>

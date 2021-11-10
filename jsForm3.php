@@ -176,6 +176,10 @@ document.cookie= "moyenne="+ note;
 note = parseInt(note3) + parseInt(note4)+parseInt(note5);
 document.cookie ="note=" +note;
  }
+
+
+
+ 
 </script>
     </form>
      
