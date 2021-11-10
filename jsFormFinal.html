@@ -18,7 +18,7 @@ function makeChart2(Participants) {
 //   "ages": "377",
 //   "Gender": "Female"
 // }
-var ParticipantLabels = Participants.map(function(d) {return d._nom});
+var ParticipantLabels = Participants.map(function(d) {return d.nom});
 var moyenneData = Participants.map(function(d) {return +d.moyenne});
 
 var chart = new Chart('myChart2', {
