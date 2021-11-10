@@ -91,7 +91,7 @@ var myCookies= [];
 
 
               <div class="form-group">
-                <button type="submit" class="btn btn-outline-warning" onclick="saveCookies()" > Submit </button>
+                <button type="submit" class="btn btn-outline-warning" onclick="saveCookies()" > Valider </button>
               </div>
 
   
