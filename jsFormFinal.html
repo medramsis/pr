@@ -51,6 +51,44 @@ datasets: [
 })
 }
 
+function makeChart(players) {
+  // players is an array of objects where each object is something like:
+  // {
+  //   "Name": "Steffi Graf",
+  //   "Weeks": "377",
+  //   "Gender": "Female"
+  // }
+
+  var playerLabels = players.map(function(d) {
+    return d.nom;
+  });
+  var weeksData = players.map(function(d) {
+    return +d.moyenne;
+  });
+
+  var chart = new Chart('chart', {
+    type: "horizontalBar",
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      }
+    },
+    data: {
+      labels: playerLabels,
+      datasets: [
+        {
+          data: weeksData
+        }
+      ]
+    }
+  });
+}
+
+// Request data using D3
+d3.csv("http://localhost/PROJET/file1.csv")
+  .then(makeChart);
+
 // Request data using D3
 
 </script>
@@ -68,6 +106,8 @@ datasets: [
 	</div>
   <div>
     <canvas id="myChart2"></canvas>
+    <canvas id="chart"></canvas>
+
   </div>
 	<script>
 		function getCookie(name){
