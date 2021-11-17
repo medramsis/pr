@@ -51,43 +51,46 @@ datasets: [
 })
 }
 
-function makeChart(players) {
-  // players is an array of objects where each object is something like:
-  // {
-  //   "Name": "Steffi Graf",
-  //   "Weeks": "377",
-  //   "Gender": "Female"
-  // }
-
-  var playerLabels = players.map(function(d) {
-    return d.nom;
-  });
-  var weeksData = players.map(function(d) {
-    return +d.moyenne;
-  });
-
-  var chart = new Chart('chart', {
-    type: "horizontalBar",
-    options: {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      }
-    },
-    data: {
-      labels: playerLabels,
-      datasets: [
-        {
-          data: weeksData
-        }
-      ]
-    }
-  });
-}
-
-// Request data using D3
 d3.csv("http://localhost/PROJET/file1.csv")
-  .then(makeChart);
+.then(makeChart1);
+function makeChart1(Participants) {
+
+var ParticipantLabels = Participants.map(function(d) {return d.nom});
+var moyenneData = Participants.map(function(d) {return +d.moyenne});
+
+var chart = new Chart('myChart1', {
+type: 'horizontalBar',
+options: {
+maintainAspectRatio: false,
+legend: {
+  display: true
+},
+scales: {
+  xAxes: [
+    {
+         
+      
+  
+          scaleLabel: {
+        display: true,
+        labelString: 'La moyenne Par Personne',
+        fontSize: 20
+      }
+    }
+  ]
+}
+},
+data: {
+labels: ParticipantLabels,
+datasets: [
+  {
+    data: moyenneData,
+    backgroundColor: ParticipantLabels
+  }
+]
+}
+})
+}
 
 // Request data using D3
 
@@ -106,7 +109,7 @@ d3.csv("http://localhost/PROJET/file1.csv")
 	</div>
   <div>
     <canvas id="myChart2"></canvas>
-    <canvas id="chart"></canvas>
+    <canvas id="myChart1"></canvas>
 
   </div>
 	<script>
