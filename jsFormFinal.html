@@ -10,7 +10,8 @@
 </head>
 
 <script>
-
+d3.csv("http://localhost/PROJET/file1.csv")
+.then(makeChart2);
 function makeChart2(Participants) {
 
 var ParticipantLabels = Participants.map(function(d) {return d.nom});
@@ -51,8 +52,7 @@ datasets: [
 }
 
 // Request data using D3
-d3.csv("http://localhost/PROJET/file1.csv")
-.then(makeChart2);
+
 </script>
 
 

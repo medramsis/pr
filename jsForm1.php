@@ -57,12 +57,7 @@ var myCookies= [];
     }
 }
     </script>
-<body style="background-image:url('//background.jpeg'),linear-gradient(
-      115deg,
-      rgba(0, 0, 0, 0.4),
-      rgba(2, 7, 36, 0.7)
-    );">
-  
+<body>
 
         <form action="jsForm2.php"  id="survey-form">
             <div class="form-group">
