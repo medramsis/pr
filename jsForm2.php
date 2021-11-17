@@ -19,13 +19,9 @@
   
     <form action="jsForm3.php" name="form1" method="post"  id="survey-form">
 
-        <div class="form-group">
-        <div class="class">
+    <div class="class">
         <fieldset>
-  Bonjour <p><span id=span1></span>  <span id=span2></span> </p>
-
-        </br>
-   
+  Bonjour <span id=span1></span>
     </fieldset>
     
 </div>

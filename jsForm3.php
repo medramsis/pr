@@ -18,7 +18,7 @@
 
     <div class="class">
         <fieldset>
-  Bonjour <p><span id=span1></span>  <span id=span2></span> </p>
+  Bonjour <span id=span1></span>
 
    
     </fieldset>
