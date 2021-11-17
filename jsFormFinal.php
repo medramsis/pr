@@ -99,7 +99,9 @@ datasets: [
 
 
 <body>
-
+  <?php
+  include('update.php');
+  ?>
 	<div>
 
 		<p style="text-align: center; font-size: 100%; margin-top: 20px; "><span id=span1></span>  <span id=span2></span> </p>

@@ -14,7 +14,7 @@
     <title>page3</title>
 </head>
 <body >
-    <form action="jsFormFinal.html" name="form2"  id="survey-form">
+    <form action="jsFormFinal.php" name="form2"  id="survey-form">
 
     <div class="class">
         <fieldset>

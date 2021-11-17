@@ -96,9 +96,7 @@ var myCookies= [];
   
             </form>
 
-<?php
-include('update.php');
-?>
+
 </body>
 
 
