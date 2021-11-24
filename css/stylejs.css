@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+ 
   color: white;
-  background-color: black;
+
 }
 
 html {
@@ -23,11 +21,11 @@ html {
 }
 
 body {
-  background-image: url("/Applications/XAMPP/xamppfiles/htdocs/projet/background.jpeg");
+  background-image: url("/Applications/XAMPP/xamppfiles/htdocs/projet/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
+  color: #495057;
   padding: 0px;
   margin: 0%;
 }
@@ -45,7 +43,7 @@ label {
   max-width: 800px;
   margin: 2rem auto;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: .50rem;
   font-size: 1.25rem;
 }
